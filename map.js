@@ -15,6 +15,20 @@ function mapBaseType(soilType){
 }
 
 if (mapCanvas) {
+  /* Stylized outline of Tamil Nadu — approximate shape only, not survey-grade.
+     Points are hand-placed in the same 0–100 % coordinate space as the district dots. */
+  const outlinePoints = "86,4 80,6 78,15 80,24 78,35 82,42 78,48 72,55 70,62 62,68 58,74 50,80 46,82 44,76 46,68 44,60 46,52 40,44 36,34 34,26 40,18 50,12 58,8 68,6";
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("viewBox", "0 0 100 100");
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.classList.add("map-outline-svg");
+  const poly = document.createElementNS(svgNS, "polygon");
+  poly.setAttribute("points", outlinePoints);
+  poly.classList.add("map-outline-shape");
+  svg.appendChild(poly);
+  mapCanvas.appendChild(svg);
+
   DISTRICTS.forEach(d => {
     const dot = document.createElement('div');
     dot.className = 'map-dot';
