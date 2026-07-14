@@ -1,0 +1,28 @@
+/* =========================================================
+   SoilSense Pro — Design Tokens
+   Dark emerald / geotechnical theme, glassmorphism.
+   ========================================================= */
+:root{
+  /* Emerald / navy core */
+  --emerald-950:#04140F; --emerald-900:#062A1F; --emerald-800:#0A3B2C; --emerald-700:#0F5138;
+  --emerald-500:#17A673; --emerald-400:#2ECC96; --emerald-300:#6FE6BC;
+  --clay-500:#C1793D; --clay-400:#D99257; --earth-600:#8C5A2E;
+  --gold-400:#E8B84B;
+  --warn:#E0A63C; --danger:#E0614F; --ok:#3FAE7A;
+
+  --bg:#04140F; --bg-alt:#062A1F; --surface:rgba(255,255,255,0.045); --surface-solid:#0A3B2C;
+  --border:rgba(255,255,255,0.09); --text:#EAF6F1; --text-dim:#9DC2B4; --text-mute:#6C8F80;
+  --glass-blur:20px;
+
+  --font-display:'Poppins',sans-serif; --font-body:'Inter',sans-serif; --font-ta:'Noto Sans Tamil',sans-serif;
+  --radius-sm:10px; --radius-md:16px; --radius-lg:26px;
+  --shadow-soft:0 10px 40px -12px rgba(0,0,0,0.6);
+  --shadow-glow:0 0 0 1px rgba(46,204,150,0.15), 0 24px 64px -20px rgba(23,166,115,0.5);
+  --z-nav:1000; --z-modal:2000; --z-toast:3000; --z-fab:900;
+}
+html[data-theme="light"]{
+  --bg:#F6FAF7; --bg-alt:#EFF6F1; --surface:rgba(10,59,44,0.045); --surface-solid:#FFFFFF;
+  --border:rgba(6,42,31,0.1); --text:#082018; --text-dim:#3A5A4C; --text-mute:#688577;
+  --shadow-soft:0 10px 30px -14px rgba(6,42,31,0.16);
+  --shadow-glow:0 0 0 1px rgba(23,166,115,0.12), 0 20px 50px -22px rgba(23,166,115,0.26);
+}

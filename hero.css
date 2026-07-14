@@ -1,0 +1,49 @@
+.hero{position:relative;padding:170px 0 90px;overflow:hidden;perspective:1000px;}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-.02em;}
+.hero h1 .accent{color:var(--emerald-400);}
+.hero p.sub{margin-top:22px;font-size:18px;color:var(--text-dim);max-width:520px;}
+.hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px;}
+.stat-card{padding:20px 16px;text-align:center;transition:transform .3s ease;}
+.stat-card:hover{transform:translateY(-4px);}
+.stat-card .num{font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--emerald-400);}
+.stat-card .lbl{font-size:12px;color:var(--text-dim);margin-top:4px;font-weight:500;}
+
+/* ---- 3D Borehole Scene ---- */
+.hero-visual{position:relative;height:480px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-glow);transform-style:preserve-3d;}
+.borehole-scene{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .15s ease-out;}
+.strata-layer{position:absolute;left:0;right:0;transition:transform .2s ease-out;}
+.strata-sky{top:0;height:24%;background:linear-gradient(180deg,var(--emerald-900),var(--emerald-700));}
+.strata-l1{top:24%;height:11%;background:linear-gradient(180deg,var(--clay-400),var(--clay-500));}
+.strata-l2{top:35%;height:13%;background:linear-gradient(180deg,#B5702F,#8C5A2E);}
+.strata-l3{top:48%;height:15%;background:linear-gradient(180deg,#3a2c1c,#2b2018);}
+.strata-l4{top:63%;height:14%;background:linear-gradient(180deg,#4a3a28,#3a2c1c);}
+.strata-l5{top:77%;height:23%;background:linear-gradient(180deg,#1a1210,#0d0908);}
+
+/* borehole shaft with rings, like a drilled core */
+.borehole-shaft{position:absolute;left:50%;top:8%;bottom:4%;width:26px;margin-left:-13px;background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.15) 40%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.5));border-left:1px solid rgba(255,255,255,.15);border-right:1px solid rgba(255,255,255,.15);}
+.borehole-ring{position:absolute;left:50%;width:38px;height:6px;margin-left:-19px;border-radius:50%;background:rgba(46,204,150,.35);animation:ringpulse 2.6s ease-in-out infinite;}
+@keyframes ringpulse{0%,100%{opacity:.25;transform:scaleX(1)}50%{opacity:.7;transform:scaleX(1.15)}}
+
+.rig{position:absolute;right:16%;top:4%;width:9px;height:48%;background:linear-gradient(180deg,var(--emerald-300),var(--emerald-500));border-radius:3px;box-shadow:0 0 26px rgba(46,204,150,.6);}
+.rig::before{content:"";position:absolute;top:-16px;left:-18px;width:44px;height:16px;background:var(--emerald-800);border:1px solid var(--emerald-400);border-radius:4px;}
+.drill-bit{position:absolute;bottom:-8px;left:-4px;width:17px;height:17px;background:var(--clay-500);border-radius:2px;animation:drillbob 2.2s ease-in-out infinite;box-shadow:0 0 14px rgba(193,121,61,.7);}
+@keyframes drillbob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(18px) rotate(8deg)}}
+.drill-cable{position:absolute;top:0;bottom:52%;right:calc(16% + 4.5px);width:2px;background:rgba(255,255,255,.35);}
+
+.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;}
+.hero-tag{position:absolute;bottom:20px;left:20px;right:20px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;}
+.hero-tag b{color:var(--emerald-300);}
+.depth-readout{position:absolute;top:16px;left:16px;padding:8px 14px;font-size:11.5px;font-weight:600;letter-spacing:.04em;}
+.dust-particle{position:absolute;width:3px;height:3px;background:var(--emerald-300);border-radius:50%;opacity:.5;animation:floaty linear infinite;pointer-events:none;}
+@keyframes floaty{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-160px) translateX(24px);opacity:0}}
+
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{height:360px;order:-1;}
+}
+@media(max-width:760px){
+  .hero{padding:130px 0 60px;}
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+}

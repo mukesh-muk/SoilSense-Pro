@@ -1,0 +1,12 @@
+@media(max-width:1080px){
+  .ai-panel-legacy{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .container{padding:0 16px;}
+  .btn{padding:12px 20px;font-size:14px;}
+  .section-head h2{font-size:26px;}
+}
+/* print styles for report page */
+@media print{
+  header,.fab-stack,#scrollProgress,.mobile-menu,#loader{display:none!important;}
+}
